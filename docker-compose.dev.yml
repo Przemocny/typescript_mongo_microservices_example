@@ -24,7 +24,7 @@ services:
     container_name: mjml
     build: ./mjml
     volumes:
-      - mjml:/app
+      - ./mjml:/app
       - ./shared:/app/shared
     ports:
       - "5000:3000"
@@ -44,7 +44,7 @@ services:
       - mjml
 
     volumes:
-      - scrumbot:/app
+      - ./scrumbot:/app
       - ./shared:/app/shared
       
     ports:
@@ -71,5 +71,5 @@ networks:
 
 volumes:
   mongo_db:
-  mjml: 
-  scrumbot:
+  # mjml: 
+  # scrumbot:

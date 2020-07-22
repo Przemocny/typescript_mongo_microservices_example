@@ -11,6 +11,7 @@ router.use(logger)
 router.use(errorHandler)
 
 router.get('/', (req: Request, res: Response) => {
+    // throw new Error('next error')
     return res.json({ name: 'mjml-converter', ip: ip.address() })
 })
 

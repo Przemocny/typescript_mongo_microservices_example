@@ -1,5 +1,5 @@
 FROM node:14.5-alpine
-COPY . ./app
+ADD . ./app
 WORKDIR /app
 
 ENV NODE_ENV dev
