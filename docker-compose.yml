@@ -1,0 +1,75 @@
+version: '3'
+  
+services:
+  db:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017-27019:27017-27019"
+    environment:
+      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mongo_db:/data/db
+    networks:
+      net:
+
+
+
+
+
+
+  mjml:
+    container_name: mjml
+    build: ./mjml
+    volumes:
+      - mjml:/app
+      - ./shared:/app/shared
+    ports:
+      - "5000:3000"
+    networks:
+      net:
+
+
+
+
+
+  scrumbot:
+    container_name: scrumbot
+    build: ./scrumbot
+
+    depends_on:
+      - db
+      - mjml
+
+    volumes:
+      - scrumbot:/app
+      - ./shared:/app/shared
+      
+    ports:
+      - "5001:3000"
+      
+    networks:
+      net:
+
+    environment:
+      - "MONGO_DB_HOST=db"
+      - "MONGO_DB_NAME=test"
+      - "MONGO_DB_USERNAME=root"
+      - "MONGO_DB_PASSWORD=rootpassword"
+      - "MJML_IP=mjml"
+
+
+
+networks:
+  net:
+    driver: bridge
+
+
+
+
+volumes:
+  mongo_db:
+  mjml:
+  scrumbot:

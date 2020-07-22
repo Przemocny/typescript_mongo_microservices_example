@@ -1,0 +1,36 @@
+[{
+    "id":1,
+    "slug":"yesterday-done",
+    "content":"Co zostało ukończone wczoraj?",
+    "options": null
+},
+{
+    "id":2,
+    "slug":"yesterday-plan-completed",
+    "content":"Czy udało się osiągnać plan z poprzedniego dnia?",
+    "options": ["Tak", "Nie", "25%", "50%", "75%"]
+},
+{
+    "id":3,
+    "slug":"yesterday-real-worktime",
+    "content":"Ile realnie zajęło dowiezienie założonych zadań?",
+    "options": ["30min","1h","2h","4h","6h","8h"]
+},
+{
+    "id":4,
+    "slug":"today-todos",
+    "content":"Co dzisiaj w planach?",
+    "options": null
+},
+{
+    "id":5,
+    "slug":"today-problems",
+    "content":"Czy widzisz jakieś problemy, które mogą opóźnić Twoją pracę?",
+    "options": ["Nie"]
+},
+{
+    "id":6,
+    "slug":"today-estimate",
+    "content":"Ile wg Ciebie zajmie Ci ten task?",
+    "options": ["30min","1h","2h","4h","6h","8h"]
+}]
